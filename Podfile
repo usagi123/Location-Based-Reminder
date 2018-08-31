@@ -7,6 +7,9 @@ target 'Location Based Reminder' do
   pod 'Firebase/Core'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionLabelModel'
+  pod 'GooglePlacePicker'
+  pod 'GooglePlaces'
+  pod 'GoogleMaps'
   # Pods for Location Based Reminder
 
 end

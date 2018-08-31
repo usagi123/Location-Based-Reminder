@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="pId-LA-gyH" customClass="PlaceNameHeader" customModule="GooglePlacePickerDemos" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="79"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOe-vn-MlG">
+                    <rect key="frame" x="8" y="29" width="419" height="41"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailingMargin" secondItem="wOe-vn-MlG" secondAttribute="trailing" priority="999" id="3Ov-b0-Bgs"/>
+                <constraint firstItem="wOe-vn-MlG" firstAttribute="leading" secondItem="pId-LA-gyH" secondAttribute="leadingMargin" id="6eS-74-VOl"/>
+                <constraint firstAttribute="bottom" secondItem="wOe-vn-MlG" secondAttribute="bottom" priority="999" constant="9" id="888-1i-NyO"/>
+                <constraint firstItem="wOe-vn-MlG" firstAttribute="top" secondItem="pId-LA-gyH" secondAttribute="top" priority="999" constant="29" id="Aqo-34-1YS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Jxs-gN-oEw"/>
+            <connections>
+                <outlet property="leadingConstraint" destination="6eS-74-VOl" id="Vti-gV-bgt"/>
+                <outlet property="placeNameLabel" destination="wOe-vn-MlG" id="5cN-9U-ent"/>
+                <outlet property="topConstraint" destination="Aqo-34-1YS" id="KIR-6i-kty"/>
+            </connections>
+            <point key="canvasLocation" x="542.5" y="-83.5"/>
+        </view>
+    </objects>
+</document>

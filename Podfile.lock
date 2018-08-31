@@ -45,6 +45,11 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
   - GoogleMobileVision/Detector (1.3.2):
     - GoogleToolboxForMac/Logger (~> 2.1)
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
@@ -52,6 +57,11 @@ PODS:
     - Protobuf (~> 3.1)
   - GoogleMobileVision/LabelDetector (1.3.2):
     - GoogleMobileVision/Detector (~> 1.3)
+  - GooglePlacePicker (2.7.0):
+    - GoogleMaps (= 2.7.0)
+    - GooglePlaces (= 2.7.0)
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
   - GoogleToolboxForMac/Defines (2.1.4)
   - GoogleToolboxForMac/Logger (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
@@ -89,6 +99,9 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/MLVision
   - Firebase/MLVisionLabelModel
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -101,7 +114,10 @@ SPEC REPOS:
     - FirebaseMLVisionLabelModel
     - GoogleAPIClientForREST
     - GoogleAppMeasurement
+    - GoogleMaps
     - GoogleMobileVision
+    - GooglePlacePicker
+    - GooglePlaces
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
@@ -118,13 +134,16 @@ SPEC CHECKSUMS:
   FirebaseMLVisionLabelModel: e172ed744536db700508f6df125e05e72044826c
   GoogleAPIClientForREST: 5b95b38a0fa912e8ac7bdcf9e124578ef1a61bf2
   GoogleAppMeasurement: f7507b39b70ad0bd80b3d81518b2f43868974307
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GoogleMobileVision: 6b0a3a2dae1974ec35d80fdeeacc3a03193642e0
+  GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: f7b824e5504b7e1bbf4e18f4957a14b86bbf0691
+PODFILE CHECKSUM: 66c0e839829e327628ab42fb36bc1f055ca3696b
 
 COCOAPODS: 1.5.3

@@ -7,9 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B4CCF902132AD0B00004A5E /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B4CCF8F2132AD0B00004A5E /* VGG16.mlmodel */; };
 		9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF02132B3FF004B6A87 /* Food101.mlmodel */; };
 		9B893BF32132B601004B6A87 /* SupportFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF22132B601004B6A87 /* SupportFunctions.swift */; };
+		9B8DDDC02139C3E600E44E31 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDBF2139C3E600E44E31 /* RoundedButton.swift */; };
+		9B8DDDC22139C40400E44E31 /* SDKAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDC12139C40400E44E31 /* SDKAPIKey.swift */; };
+		9B8DDDC42139C42100E44E31 /* ShadowLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDC32139C42100E44E31 /* ShadowLineView.swift */; };
+		9B8DDDC62139C43900E44E31 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDC52139C43900E44E31 /* ShadowView.swift */; };
+		9B8DDDC82139C44C00E44E31 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDC72139C44C00E44E31 /* Styles.swift */; };
+		9B8DDDCA2139C4BF00E44E31 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDC92139C4BF00E44E31 /* CGRect+Extensions.swift */; };
+		9B8DDDCC2139C4D000E44E31 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDCB2139C4D000E44E31 /* NotificationObserver.swift */; };
+		9B8DDDCE2139C58400E44E31 /* BackgroundMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDCD2139C58400E44E31 /* BackgroundMapViewController.swift */; };
+		9B8DDDD02139C59B00E44E31 /* BaseContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDCF2139C59B00E44E31 /* BaseContainerViewController.swift */; };
+		9B8DDDD22139C5B300E44E31 /* InsetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDD12139C5B300E44E31 /* InsetViewController.swift */; };
+		9B8DDDD42139C5C800E44E31 /* SplitPaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDD32139C5C800E44E31 /* SplitPaneViewController.swift */; };
+		9B8DDDD62139C5F700E44E31 /* PickAPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDD52139C5F700E44E31 /* PickAPlaceViewController.swift */; };
+		9B8DDDD82139C63500E44E31 /* PickAPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8DDDD72139C63500E44E31 /* PickAPlaceViewController.xib */; };
+		9B8DDDDA2139C66700E44E31 /* PlaceAttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDD92139C66700E44E31 /* PlaceAttributeCell.swift */; };
+		9B8DDDDC2139C68700E44E31 /* PlaceAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8DDDDB2139C68700E44E31 /* PlaceAttributeCell.xib */; };
+		9B8DDDDE2139C69B00E44E31 /* PlaceDetailTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDDD2139C69B00E44E31 /* PlaceDetailTableViewDataSource.swift */; };
+		9B8DDDE02139C6B400E44E31 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDDF2139C6B400E44E31 /* PlaceDetailViewController.swift */; };
+		9B8DDDE22139C6D100E44E31 /* PlaceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8DDDE12139C6D100E44E31 /* PlaceDetailViewController.xib */; };
+		9B8DDDE42139C6FB00E44E31 /* PlaceNameHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DDDE32139C6FB00E44E31 /* PlaceNameHeader.swift */; };
+		9B8DDDE62139C70E00E44E31 /* PlaceNameHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8DDDE52139C70E00E44E31 /* PlaceNameHeader.xib */; };
 		9BC9C9E4212A6E2400BB8F8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9E3212A6E2400BB8F8D /* AppDelegate.swift */; };
 		9BC9C9E9212A6E2400BB8F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9C9E7212A6E2400BB8F8D /* Main.storyboard */; };
 		9BC9C9EC212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9EA212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld */; };
@@ -27,9 +46,28 @@
 /* Begin PBXFileReference section */
 		5369E71BF7696A9D5B0D87D0 /* Pods_Location_Based_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location_Based_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D04708C2217A4EA9EF85B43 /* Pods-Location Based Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location Based Reminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Location Based Reminder/Pods-Location Based Reminder.debug.xcconfig"; sourceTree = "<group>"; };
-		9B4CCF8F2132AD0B00004A5E /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
 		9B893BF02132B3FF004B6A87 /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
 		9B893BF22132B601004B6A87 /* SupportFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
+		9B8DDDBF2139C3E600E44E31 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		9B8DDDC12139C40400E44E31 /* SDKAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKAPIKey.swift; sourceTree = "<group>"; };
+		9B8DDDC32139C42100E44E31 /* ShadowLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLineView.swift; sourceTree = "<group>"; };
+		9B8DDDC52139C43900E44E31 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		9B8DDDC72139C44C00E44E31 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		9B8DDDC92139C4BF00E44E31 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		9B8DDDCB2139C4D000E44E31 /* NotificationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
+		9B8DDDCD2139C58400E44E31 /* BackgroundMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMapViewController.swift; sourceTree = "<group>"; };
+		9B8DDDCF2139C59B00E44E31 /* BaseContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContainerViewController.swift; sourceTree = "<group>"; };
+		9B8DDDD12139C5B300E44E31 /* InsetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetViewController.swift; sourceTree = "<group>"; };
+		9B8DDDD32139C5C800E44E31 /* SplitPaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitPaneViewController.swift; sourceTree = "<group>"; };
+		9B8DDDD52139C5F700E44E31 /* PickAPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAPlaceViewController.swift; sourceTree = "<group>"; };
+		9B8DDDD72139C63500E44E31 /* PickAPlaceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickAPlaceViewController.xib; sourceTree = "<group>"; };
+		9B8DDDD92139C66700E44E31 /* PlaceAttributeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAttributeCell.swift; sourceTree = "<group>"; };
+		9B8DDDDB2139C68700E44E31 /* PlaceAttributeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceAttributeCell.xib; sourceTree = "<group>"; };
+		9B8DDDDD2139C69B00E44E31 /* PlaceDetailTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewDataSource.swift; sourceTree = "<group>"; };
+		9B8DDDDF2139C6B400E44E31 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		9B8DDDE12139C6D100E44E31 /* PlaceDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceDetailViewController.xib; sourceTree = "<group>"; };
+		9B8DDDE32139C6FB00E44E31 /* PlaceNameHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNameHeader.swift; sourceTree = "<group>"; };
+		9B8DDDE52139C70E00E44E31 /* PlaceNameHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceNameHeader.xib; sourceTree = "<group>"; };
 		9BC9C9E0212A6E2400BB8F8D /* Location Based Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Based Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC9C9E3212A6E2400BB8F8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC9C9E8212A6E2400BB8F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +105,81 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9B8DDDB82139BD3A00E44E31 /* Place Picker */ = {
+			isa = PBXGroup;
+			children = (
+				9B8DDDB92139BD5900E44E31 /* Resources */,
+				9B8DDDBA2139BD6700E44E31 /* Support */,
+				9B8DDDBB2139BD7B00E44E31 /* ViewControllers */,
+				9B8DDDBF2139C3E600E44E31 /* RoundedButton.swift */,
+				9B8DDDC12139C40400E44E31 /* SDKAPIKey.swift */,
+				9B8DDDC32139C42100E44E31 /* ShadowLineView.swift */,
+				9B8DDDC52139C43900E44E31 /* ShadowView.swift */,
+				9B8DDDC72139C44C00E44E31 /* Styles.swift */,
+			);
+			path = "Place Picker";
+			sourceTree = "<group>";
+		};
+		9B8DDDB92139BD5900E44E31 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9B8DDDBA2139BD6700E44E31 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				9B8DDDC92139C4BF00E44E31 /* CGRect+Extensions.swift */,
+				9B8DDDCB2139C4D000E44E31 /* NotificationObserver.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		9B8DDDBB2139BD7B00E44E31 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B8DDDBE2139BDC400E44E31 /* Containers */,
+				9B8DDDBC2139BDA100E44E31 /* PickAPlace */,
+				9B8DDDBD2139BDAA00E44E31 /* PlaceDetail */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9B8DDDBC2139BDA100E44E31 /* PickAPlace */ = {
+			isa = PBXGroup;
+			children = (
+				9B8DDDD52139C5F700E44E31 /* PickAPlaceViewController.swift */,
+				9B8DDDD72139C63500E44E31 /* PickAPlaceViewController.xib */,
+			);
+			path = PickAPlace;
+			sourceTree = "<group>";
+		};
+		9B8DDDBD2139BDAA00E44E31 /* PlaceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9B8DDDD92139C66700E44E31 /* PlaceAttributeCell.swift */,
+				9B8DDDDB2139C68700E44E31 /* PlaceAttributeCell.xib */,
+				9B8DDDDD2139C69B00E44E31 /* PlaceDetailTableViewDataSource.swift */,
+				9B8DDDDF2139C6B400E44E31 /* PlaceDetailViewController.swift */,
+				9B8DDDE12139C6D100E44E31 /* PlaceDetailViewController.xib */,
+				9B8DDDE32139C6FB00E44E31 /* PlaceNameHeader.swift */,
+				9B8DDDE52139C70E00E44E31 /* PlaceNameHeader.xib */,
+			);
+			path = PlaceDetail;
+			sourceTree = "<group>";
+		};
+		9B8DDDBE2139BDC400E44E31 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				9B8DDDCD2139C58400E44E31 /* BackgroundMapViewController.swift */,
+				9B8DDDCF2139C59B00E44E31 /* BaseContainerViewController.swift */,
+				9B8DDDD12139C5B300E44E31 /* InsetViewController.swift */,
+				9B8DDDD32139C5C800E44E31 /* SplitPaneViewController.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
 		9BC9C9D7212A6E2400BB8F8D = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +215,7 @@
 				9BF4A2212133159400A6E935 /* GoogleService-Info.plist */,
 				9BC9C9EA212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld */,
 				9B893BF02132B3FF004B6A87 /* Food101.mlmodel */,
-				9B4CCF8F2132AD0B00004A5E /* VGG16.mlmodel */,
+				9B8DDDB82139BD3A00E44E31 /* Place Picker */,
 			);
 			path = "Location Based Reminder";
 			sourceTree = "<group>";
@@ -127,6 +240,7 @@
 				9BC9C9DD212A6E2400BB8F8D /* Frameworks */,
 				9BC9C9DE212A6E2400BB8F8D /* Resources */,
 				9618C7B24F8870CB871F0ACB /* [CP] Embed Pods Frameworks */,
+				2B1F0318D229934D2C9D29E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,8 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC9C9F1212A6E2700BB8F8D /* LaunchScreen.storyboard in Resources */,
+				9B8DDDD82139C63500E44E31 /* PickAPlaceViewController.xib in Resources */,
+				9B8DDDDC2139C68700E44E31 /* PlaceAttributeCell.xib in Resources */,
+				9B8DDDE62139C70E00E44E31 /* PlaceNameHeader.xib in Resources */,
 				9BF4A2222133159500A6E935 /* GoogleService-Info.plist in Resources */,
 				9BC9C9EE212A6E2700BB8F8D /* Assets.xcassets in Resources */,
+				9B8DDDE22139C6D100E44E31 /* PlaceDetailViewController.xib in Resources */,
 				9BC9C9E9212A6E2400BB8F8D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +319,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B1F0318D229934D2C9D29E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Location Based Reminder/Pods-Location Based Reminder-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Location Based Reminder/Pods-Location Based Reminder-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9618C7B24F8870CB871F0ACB /* [CP] Embed Pods Frameworks */ = {
@@ -238,16 +378,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8DDDDA2139C66700E44E31 /* PlaceAttributeCell.swift in Sources */,
 				9BF4A2242133216500A6E935 /* UIImage+VisionDetection.swift in Sources */,
+				9B8DDDC82139C44C00E44E31 /* Styles.swift in Sources */,
+				9B8DDDC02139C3E600E44E31 /* RoundedButton.swift in Sources */,
+				9B8DDDDE2139C69B00E44E31 /* PlaceDetailTableViewDataSource.swift in Sources */,
 				9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */,
+				9B8DDDCC2139C4D000E44E31 /* NotificationObserver.swift in Sources */,
+				9B8DDDCA2139C4BF00E44E31 /* CGRect+Extensions.swift in Sources */,
+				9B8DDDD62139C5F700E44E31 /* PickAPlaceViewController.swift in Sources */,
+				9B8DDDE02139C6B400E44E31 /* PlaceDetailViewController.swift in Sources */,
 				9BC9C9EC212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld in Sources */,
 				9BC9C9FB212A705300BB8F8D /* ListingSongsTableViewController.swift in Sources */,
+				9B8DDDCE2139C58400E44E31 /* BackgroundMapViewController.swift in Sources */,
 				9BF4A226213322C600A6E935 /* UIUtilities.swift in Sources */,
-				9B4CCF902132AD0B00004A5E /* VGG16.mlmodel in Sources */,
 				9BC9C9FD212A722B00BB8F8D /* EditSongViewController.swift in Sources */,
 				9BC9C9E4212A6E2400BB8F8D /* AppDelegate.swift in Sources */,
+				9B8DDDC42139C42100E44E31 /* ShadowLineView.swift in Sources */,
+				9B8DDDE42139C6FB00E44E31 /* PlaceNameHeader.swift in Sources */,
+				9B8DDDC22139C40400E44E31 /* SDKAPIKey.swift in Sources */,
+				9B8DDDC62139C43900E44E31 /* ShadowView.swift in Sources */,
+				9B8DDDD42139C5C800E44E31 /* SplitPaneViewController.swift in Sources */,
 				9BC9C9F9212A701000BB8F8D /* CreateSongViewController.swift in Sources */,
+				9B8DDDD22139C5B300E44E31 /* InsetViewController.swift in Sources */,
 				9B893BF32132B601004B6A87 /* SupportFunctions.swift in Sources */,
+				9B8DDDD02139C59B00E44E31 /* BaseContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
