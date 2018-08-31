@@ -128,7 +128,7 @@ class BackgroundMapViewController: UIViewController, CAAnimationDelegate {
         let targetCoordinate = CLLocationCoordinate2D(latitude: coordinate.latitude + randomOffset(),
                                                       longitude: coordinate.longitude + randomOffset())
         
-        Constants.globalConstants = targetCoordinate
+        CoordinateConstants.globalConstants = targetCoordinate
         
         // Set the target coordinate on the map layer.
         mapView?.layer.cameraLatitude = targetCoordinate.latitude

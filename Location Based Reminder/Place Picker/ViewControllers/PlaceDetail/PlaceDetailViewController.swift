@@ -66,8 +66,8 @@ class PlaceDetailViewController: BaseContainerViewController {
         placeArray = [place]
         print(placeArray)
         //Take lat and long of selected place
-        Constants.globalConstants.latitude = place.coordinate.latitude
-        Constants.globalConstants.longitude = place.coordinate.longitude
+        CoordinateConstants.globalConstants.latitude = place.coordinate.latitude
+        CoordinateConstants.globalConstants.longitude = place.coordinate.longitude
     }
     
     override func viewWillAppear(_ animated: Bool) {
