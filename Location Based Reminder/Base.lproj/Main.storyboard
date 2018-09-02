@@ -15,13 +15,13 @@
         <!--Location Based Reminder-->
         <scene sceneID="LaU-1R-JG2">
             <objects>
-                <tableViewController id="8mI-O6-FSX" customClass="ListingSongsTableViewController" customModule="FavoriteSongs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8mI-O6-FSX" customClass="ListingSongsTableViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="222" sectionHeaderHeight="28" sectionFooterHeight="28" id="bNn-SB-zp4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="Z0y-Br-ps2" customClass="HeadlineTableViewCell" customModule="FavoriteSongs" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="Z0y-Br-ps2" customClass="HeadlineTableViewCell" customModule="Location_Based_Reminder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z0y-Br-ps2" id="NMx-xB-UHz">
@@ -119,7 +119,7 @@
         <!--Create Song View Controller-->
         <scene sceneID="PVp-mE-ZJ8">
             <objects>
-                <viewController id="B9J-xN-wz2" customClass="CreateSongViewController" customModule="FavoriteSongs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="B9J-xN-wz2" customClass="CreateSongViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwN-AA-ctX"/>
                         <viewControllerLayoutGuide type="bottom" id="9Aa-o4-853"/>
@@ -308,7 +308,7 @@
         <!--Edit Song View Controller-->
         <scene sceneID="DO7-ZS-U1c">
             <objects>
-                <viewController storyboardIdentifier="UpdateVC" id="ub0-Lw-fwi" customClass="EditSongViewController" customModule="FavoriteSongs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateVC" id="ub0-Lw-fwi" customClass="EditSongViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oQ2-3o-flD"/>
                         <viewControllerLayoutGuide type="bottom" id="VH9-bT-UQX"/>
@@ -401,6 +401,15 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc0-Bj-Ohf">
+                                                <rect key="frame" x="174" y="541" width="67" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Map View"/>
+                                                <connections>
+                                                    <action selector="checkMapButton:" destination="ub0-Lw-fwi" eventType="touchUpInside" id="gLS-n9-wxp"/>
+                                                    <segue destination="ypw-ek-Lz4" kind="presentation" identifier="checkMap" id="ngR-9G-gSA"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -483,6 +492,113 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1103" y="1583"/>
+        </scene>
+        <!--Map View-->
+        <scene sceneID="M33-nc-AWj">
+            <objects>
+                <viewController id="V4g-iK-i6g" customClass="MapViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W8G-kU-BoV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qhg-gS-GrV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zQH-0p-Fwf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="kxE-to-8qV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map View" id="ioc-ma-fHF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="tWz-he-9K2">
+                            <connections>
+                                <action selector="backDetailViewButton:" destination="V4g-iK-i6g" id="QeH-0B-K13"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Pick Place" style="plain" id="N1E-dL-8Wn">
+                            <connections>
+                                <segue destination="ybs-KM-dvm" kind="show" identifier="segueToSelect" id="UpC-c5-MZa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3k-DJ-4bR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="1582"/>
+        </scene>
+        <!--Places View Controller-->
+        <scene sceneID="U7K-db-ogm">
+            <objects>
+                <viewController id="ybs-KM-dvm" customClass="PlacesViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P3R-Fb-AOo"/>
+                        <viewControllerLayoutGuide type="bottom" id="adR-l1-sJW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8UM-RF-duC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blh-28-Cqc">
+                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Choose a place" id="5N5-nP-5Yj">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="wmp-9R-2Lj"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tM7-td-9f5">
+                                <rect key="frame" x="0.0" y="108" width="414" height="628"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mOU-ws-XEl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mOU-ws-XEl" id="aoh-pq-1Rr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="blh-28-Cqc" secondAttribute="trailing" id="3N7-Bp-lWF"/>
+                            <constraint firstItem="tM7-td-9f5" firstAttribute="bottom" secondItem="adR-l1-sJW" secondAttribute="top" id="8d4-ga-zlE"/>
+                            <constraint firstItem="blh-28-Cqc" firstAttribute="leading" secondItem="tM7-td-9f5" secondAttribute="leading" id="CYb-KT-vMU"/>
+                            <constraint firstItem="blh-28-Cqc" firstAttribute="trailing" secondItem="tM7-td-9f5" secondAttribute="trailing" id="fLT-ZP-Jos"/>
+                            <constraint firstItem="tM7-td-9f5" firstAttribute="top" secondItem="blh-28-Cqc" secondAttribute="bottom" id="gOW-b9-RdV"/>
+                            <constraint firstItem="blh-28-Cqc" firstAttribute="leading" secondItem="8UM-RF-duC" secondAttribute="leading" id="guY-u0-sjz"/>
+                            <constraint firstItem="blh-28-Cqc" firstAttribute="top" secondItem="P3R-Fb-AOo" secondAttribute="bottom" id="yze-t8-ag2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a0L-1K-5R2"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="tM7-td-9f5" id="gif-26-Gz2"/>
+                        <segue destination="sbB-wp-Ep4" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWithSegue:" id="UeF-dG-D63"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gd5-ye-68D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sbB-wp-Ep4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3464" y="1582"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cUd-g3-vG6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ypw-ek-Lz4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5rf-Qh-HMC">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="V4g-iK-i6g" kind="relationship" relationship="rootViewController" id="DNA-hN-d4c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLL-VN-WFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="1583"/>
         </scene>
     </scenes>
     <resources>

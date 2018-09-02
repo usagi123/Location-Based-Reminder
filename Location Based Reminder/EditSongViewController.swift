@@ -21,6 +21,10 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var longitudeText: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBAction func checkMapButton(_ sender: Any) {
+        performSegue(withIdentifier: "checkMap", sender: self)
+    }
+    
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
