@@ -281,7 +281,7 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
     func detectImageContent() {
         lblResult.text = "Thinking"
         
-        guard let model = try? VNCoreMLModel(for: VGG16().model) else {
+        guard let model = try? VNCoreMLModel(for: Food101().model) else {
             fatalError("Failed to load model") //debug mode only, will use actionsheet later
         }
         

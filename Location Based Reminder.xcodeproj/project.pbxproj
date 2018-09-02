@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B4CCF902132AD0B00004A5E /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B4CCF8F2132AD0B00004A5E /* VGG16.mlmodel */; };
+		9B339BE5213C59CA00FDEC37 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */; };
+		9B339BE6213C59CA00FDEC37 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B339BE3213C59CA00FDEC37 /* PlacesViewController.swift */; };
+		9B339BE7213C59CA00FDEC37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B339BE4213C59CA00FDEC37 /* MapViewController.swift */; };
 		9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF02132B3FF004B6A87 /* Food101.mlmodel */; };
 		9B893BF32132B601004B6A87 /* SupportFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF22132B601004B6A87 /* SupportFunctions.swift */; };
 		9BC9C9E4212A6E2400BB8F8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9E3212A6E2400BB8F8D /* AppDelegate.swift */; };
@@ -27,7 +29,9 @@
 /* Begin PBXFileReference section */
 		5369E71BF7696A9D5B0D87D0 /* Pods_Location_Based_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location_Based_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D04708C2217A4EA9EF85B43 /* Pods-Location Based Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location Based Reminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Location Based Reminder/Pods-Location Based Reminder.debug.xcconfig"; sourceTree = "<group>"; };
-		9B4CCF8F2132AD0B00004A5E /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
+		9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		9B339BE3213C59CA00FDEC37 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		9B339BE4213C59CA00FDEC37 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9B893BF02132B3FF004B6A87 /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
 		9B893BF22132B601004B6A87 /* SupportFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
 		9BC9C9E0212A6E2400BB8F8D /* Location Based Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Based Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +99,9 @@
 				9BF4A225213322C600A6E935 /* UIUtilities.swift */,
 				9BC9C9FC212A722B00BB8F8D /* EditSongViewController.swift */,
 				9B893BF22132B601004B6A87 /* SupportFunctions.swift */,
+				9B339BE4213C59CA00FDEC37 /* MapViewController.swift */,
+				9B339BE3213C59CA00FDEC37 /* PlacesViewController.swift */,
+				9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */,
 				9BC9C9E7212A6E2400BB8F8D /* Main.storyboard */,
 				9BC9C9ED212A6E2700BB8F8D /* Assets.xcassets */,
 				9BC9C9EF212A6E2700BB8F8D /* LaunchScreen.storyboard */,
@@ -102,7 +109,6 @@
 				9BF4A2212133159400A6E935 /* GoogleService-Info.plist */,
 				9BC9C9EA212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld */,
 				9B893BF02132B3FF004B6A87 /* Food101.mlmodel */,
-				9B4CCF8F2132AD0B00004A5E /* VGG16.mlmodel */,
 			);
 			path = "Location Based Reminder";
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 				9BC9C9DD212A6E2400BB8F8D /* Frameworks */,
 				9BC9C9DE212A6E2400BB8F8D /* Resources */,
 				9618C7B24F8870CB871F0ACB /* [CP] Embed Pods Frameworks */,
+				9204BE4B0940000812A78777 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,6 +210,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9204BE4B0940000812A78777 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Location Based Reminder/Pods-Location Based Reminder-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Location Based Reminder/Pods-Location Based Reminder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9618C7B24F8870CB871F0ACB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +242,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -224,6 +252,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,12 +267,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B339BE5213C59CA00FDEC37 /* UIViewExtension.swift in Sources */,
 				9BF4A2242133216500A6E935 /* UIImage+VisionDetection.swift in Sources */,
 				9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */,
+				9B339BE6213C59CA00FDEC37 /* PlacesViewController.swift in Sources */,
 				9BC9C9EC212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld in Sources */,
 				9BC9C9FB212A705300BB8F8D /* ListingSongsTableViewController.swift in Sources */,
 				9BF4A226213322C600A6E935 /* UIUtilities.swift in Sources */,
-				9B4CCF902132AD0B00004A5E /* VGG16.mlmodel in Sources */,
+				9B339BE7213C59CA00FDEC37 /* MapViewController.swift in Sources */,
 				9BC9C9FD212A722B00BB8F8D /* EditSongViewController.swift in Sources */,
 				9BC9C9E4212A6E2400BB8F8D /* AppDelegate.swift in Sources */,
 				9BC9C9F9212A701000BB8F8D /* CreateSongViewController.swift in Sources */,
