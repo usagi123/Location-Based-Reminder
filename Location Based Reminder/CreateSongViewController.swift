@@ -81,19 +81,12 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
     @IBAction func saveContact(_ sender: Any) {
         
         //If any fields are empty, app will reject and pop a alert for user to fill it or cancel creating new entry
-        if (locationEntryTextView?.text.isEmpty)! || locationEntryTextView?.text == "Buy Apple" || (itemEntryTextView?.text.isEmpty)! || itemEntryTextView?.text == "Title" || (latitudeEntryTextView?.text.isEmpty)! || latitudeEntryTextView?.text == "Year" || (longitudeEntryTextView?.text.isEmpty)! || longitudeEntryTextView?.text == "URL" || imageEntryImageView.image == UIImage(named: "011429230786001.jpeg") {
+        if (locationEntryTextView?.text.isEmpty)! || locationEntryTextView?.text == "Buy Apple" || (itemEntryTextView?.text.isEmpty)! || itemEntryTextView?.text == "Title" || imageEntryImageView.image == UIImage(named: "011429230786001.jpeg") {
             
 //            print("No Data")
             let alert = UIAlertController(title: "Blank entry", message: "Please fully filled all details.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default) { action in })
             
-            self.present(alert, animated: true, completion: nil)
-            
-        } else if Double(latitudeEntryTextView.text) == nil {
-            
-//            print("Error, not number input")
-            let alert = UIAlertController(title: "Wrong data type", message: "Please type number only", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default) { action in })
             self.present(alert, animated: true, completion: nil)
             
         } else {
@@ -102,8 +95,7 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
             let newEntry = Item(context: context)
             newEntry.location = locationEntryTextView?.text!
             newEntry.title = itemEntryTextView?.text!
-            newEntry.latitude = latitudeEntryTextView?.text!
-            newEntry.longitude = longitudeEntryTextView?.text!
+            newEntry.type = lblResult?.text!
             
             //Convert UIImage data to Binary data to save to Core Data
             let img = imageEntryImageView.image
@@ -120,8 +112,6 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
         
         locationEntryTextView?.delegate = self
         itemEntryTextView?.delegate = self
-        latitudeEntryTextView?.delegate = self
-        longitudeEntryTextView?.delegate = self
         
         detectImageContent()
         detectLabels(image: imageEntryImageView.image)
@@ -229,19 +219,21 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
             
             //Parse data from features array list of hashed data consist of "label, confidence, entityID and frame" into normal data
             let firstResult = features.first //take the first result only, replace features.map below into firstResult.map + remove .joined at the end as there is only 1 label left
-            self.resultsText = features.map { feature -> String in
+            self.resultsText = firstResult.map { feature -> String in
                 let transformedRect = feature.frame.applying(self.transformMatrix())
                 UIUtilities.addRectangle(
                     transformedRect,
                     to: self.annotationOverlayView,
                     color: UIColor.green
                 )
+                self.lblResult.text = "Type: " + String(describing: feature.label)
                 return "Label: \(String(describing: feature.label)), " +
                     "Confidence: \(feature.confidence), " +
                     "EntityID: \(String(describing: feature.entityID)), " +
                     "Frame: \(feature.frame)"
-                }.joined(separator: "\n")
-            self.showResults()
+                }!
+//                .joined(separator: "\n")
+//            self.showResults()
         }
     }
     
@@ -296,7 +288,7 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
             DispatchQueue.main.async { [weak self] in
                 let resultString = topResult.identifier
                 let normalString = resultString.replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
-                self?.lblResult.text = "Detect object as \(topResult.identifier) with \(Int(topResult.confidence * 100))% confidence"
+//                self?.lblResult.text = "Detect object as \(topResult.identifier) with \(Int(topResult.confidence * 100))% confidence"
                 self?.itemEntryTextView?.text = "Buy \(normalString)"
             }
         }

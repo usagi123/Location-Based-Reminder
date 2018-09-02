@@ -72,8 +72,6 @@ extension ListingSongsTableViewController {
         
         cell.headlineTitleLabel.text = filteredData[indexPath.row].title!
         cell.headlineLocationLabel.text = "at " + filteredData[indexPath.row].location!
-        cell.headlineLatitudeLabel.text = filteredData[indexPath.row].latitude!
-        cell.headlineLongitudeLabel.text = filteredData[indexPath.row].longitude!
         cell.headlineImageView.image = UIImage(data: filteredData[indexPath.row].image!)
 //        let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.tappedOnView))
         

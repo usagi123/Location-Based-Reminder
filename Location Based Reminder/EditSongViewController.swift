@@ -72,8 +72,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         locationText.isEditable = true
         titleText.isEditable = true
-        latitudeText.isEditable = true
-        longitudeText.isEditable = true
         imageView.isUserInteractionEnabled = true
     }
     
@@ -81,8 +79,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         locationText.isEditable = false
         titleText.isEditable = false
-        latitudeText.isEditable = false
-        longitudeText.isEditable = false
         imageView.isUserInteractionEnabled = false
     }
     
@@ -95,8 +91,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
             //Switch to edit mode when Edit button was pressed
             guard let newLocation = locationText.text,
                 let newTitle = titleText.text,
-                let newLatitude = latitudeText.text,
-                let newLongitude = longitudeText.text,
                 let newImage = imageView.image else  {
                     return
             }
@@ -104,8 +98,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
             //Assign which attribute belong to which entity so they can load correctly into their field (Read)
             item.location = newLocation
             item.title = newTitle
-            item.latitude = newLatitude
-            item.longitude = newLongitude
             item.image = UIImageJPEGRepresentation(newImage, 1)! as Data //Convert Binary data from Core Data to UIImage data for display
             
             updateHeadingOutlet.text = "Update Song"
@@ -115,8 +107,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         case true:
             guard let newLocation = locationText.text,
                 let newTitle = titleText.text,
-                let newLatitude = latitudeText.text,
-                let newLongitude = longitudeText.text,
                 let newImage = imageView.image else  {
                     return
             }
@@ -141,8 +131,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
                 //Save new data from inside all fields back to Core Data (Update)
                 item.location = newLocation
                 item.title = newTitle
-                item.latitude = newLatitude
-                item.longitude = newLongitude
                 item.image = UIImageJPEGRepresentation(newImage, 1)! as Data
                 
                 (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -173,8 +161,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         locationText!.delegate = self
         titleText!.delegate = self
-        latitudeText!.delegate = self
-        latitudeText.keyboardType = .numberPad
         let img = UIImage(data: item.image! as Data)
         imageView.image = img
         
@@ -214,16 +200,12 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
     func configureEntryData(entry: Item) {
         
         guard let text = entry.location,
-            let title = entry.title,
-            let latitude = entry.latitude,
-            let longitude = entry.longitude else {
+            let title = entry.title else {
                 return
         }
         
         locationText!.text = text
         titleText!.text = title
-        latitudeText!.text = latitude
-        longitudeText!.text = longitude
     }
     
     //View keyboard everytime clicking into field

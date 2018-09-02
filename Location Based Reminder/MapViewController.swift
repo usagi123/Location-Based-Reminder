@@ -78,6 +78,10 @@ class MapViewController: UIViewController {
         mapView.isHidden = true
         
         listLikelyPlaces()
+        
+        //Create geofence
+        let geoFenceRegion: CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 10.729442, longitude: 106.692971), radius: 10, identifier: "RMIT")
+        locationManager.startMonitoring(for: geoFenceRegion)
     }
     
     // Populate the array with the list of likely places.
@@ -130,8 +134,19 @@ extension MapViewController: CLLocationManagerDelegate {
         } else {
             mapView.animate(to: camera)
         }
-        
         listLikelyPlaces()
+        
+        for currentLocation in locations {
+            print("\(index): \(currentLocation)")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("Entered: \(region.identifier)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("Exited: \(region.identifier)")
     }
     
     // Handle authorization for the location manager.
