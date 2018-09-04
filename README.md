@@ -1,6 +1,7 @@
 # Location-Based-Reminder
 SEPM project
 
-Manualy select places for notification branch
+Select places branch
+Manualy select places for notification
 
 - Low piority
