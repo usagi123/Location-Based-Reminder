@@ -9,6 +9,7 @@
 import UIKit
 import GooglePlaces
 import SwiftyJSON
+import CoreData
 
 class PlacesViewController: UIViewController {
     
@@ -17,19 +18,32 @@ class PlacesViewController: UIViewController {
     // An array to hold the list of possible locations.
     // TODO: create a switch case for all label types google places support
     var likelyPlaces: [GMSPlace] = []
-    var shopping_mall: [GMSPlace] = []
-    var convenience_store: [GMSPlace] = []
-    var restaurant: [GMSPlace] = []
+    var itemCheck: NSManagedObject? = nil
     var selectedPlace: GMSPlace?
     var lengthOfArray: Int = 0
+
+    var placesResult: [GMSPlace] = []
     
     // Cell reuse id (cells that scroll out of view can be reused).
     let cellReuseIdentifier = "cell"
     
+    var item: Item!
+    var visionType: String?
+    var visionType1 = ""
+    var visionType2 = ""
+    
+    func determineType() {
+
+        if visionType?.contains("Food") == true {
+            visionType1 = "supermarket"
+            visionType2 = "shopping_mall"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shopping_mall.removeAll()
+        placesResult.removeAll()
         
         // Register the table view cell class and its reuse id.
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -45,12 +59,15 @@ class PlacesViewController: UIViewController {
         
         //Sorting based on types that contains keywords
         for i in 0..<likelyPlaces.count {
-            if (likelyPlaces[i].types.contains("restaurant") && !restaurant.contains(likelyPlaces[i])) {
-                restaurant.append(likelyPlaces[i])
+            
+            if ((likelyPlaces[i].types.contains(GlobalVariables.visionType1) || likelyPlaces[i].types.contains(GlobalVariables.visionType2)  || likelyPlaces[i].types.contains(GlobalVariables.visionType3) || likelyPlaces[i].types.contains(GlobalVariables.visionType4)) && !placesResult.contains(likelyPlaces[i])) {
+                placesResult.append(likelyPlaces[i])
             }
         }
         likelyPlaces.removeAll()
-        likelyPlaces = restaurant
+        likelyPlaces = placesResult
+        GlobalVariables.lat = likelyPlaces[0].coordinate.latitude
+        GlobalVariables.long = likelyPlaces[0].coordinate.longitude
         tableView.reloadData()
     }
     

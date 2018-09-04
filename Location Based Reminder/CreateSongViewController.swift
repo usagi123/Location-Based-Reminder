@@ -290,6 +290,7 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
                 let normalString = resultString.replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
 //                self?.lblResult.text = "Detect object as \(topResult.identifier) with \(Int(topResult.confidence * 100))% confidence"
                 self?.itemEntryTextView?.text = "Buy \(normalString)"
+                GlobalVariables.titleIdentifier = normalString
             }
         }
         

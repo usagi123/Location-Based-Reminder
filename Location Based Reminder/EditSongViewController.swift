@@ -9,11 +9,39 @@
 import UIKit
 import SafariServices
 
+struct GlobalVariables {
+    static var titleIdentifier: String = String()
+    static var lat: Double = Double()
+    static var long: Double = Double()
+    static var visionType: String = String()
+    static var visionType1: String = String()
+    static var visionType2: String = String()
+    static var visionType3: String = String()
+    static var visionType4: String = String()
+}
+
 class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var item: Item!
     var editToggle: Bool = false
+    
+//    var visionType: String?
+//    var visionType1 = ""
+//    var visionType2 = ""
+    
+    func determineType() {
+        GlobalVariables.visionType = item.type!
+        GlobalVariables.titleIdentifier = item.title!
+        
+        if GlobalVariables.visionType.contains("Food") || GlobalVariables.visionType.contains("Fruit") || GlobalVariables.visionType.contains("Vegetable") {
+            GlobalVariables.visionType1 = "supermarket"
+            GlobalVariables.visionType2 = "shopping_mall"
+            GlobalVariables.visionType3 = "convenience_store"
+            GlobalVariables.visionType4 = "department_store"
+            
+        } 
+    }
     
     @IBOutlet weak var locationText: UITextView!
     @IBOutlet weak var titleText: UITextView!
@@ -166,6 +194,13 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         configureEntryData(entry: item)
         print(item)
+
+        determineType()
+        print(GlobalVariables.visionType1)
+        print(GlobalVariables.visionType2)
+        print(GlobalVariables.lat)
+        print(GlobalVariables.long)
+        print(GlobalVariables.titleIdentifier)
         
         //Move the UI for the keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -200,12 +235,14 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
     func configureEntryData(entry: Item) {
         
         guard let text = entry.location,
-            let title = entry.title else {
+            let title = entry.title,
+            let type = entry.type else {
                 return
         }
         
         locationText!.text = text
         titleText!.text = title
+        GlobalVariables.visionType = type
     }
     
     //View keyboard everytime clicking into field

@@ -24,12 +24,16 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Access camera to add cover picture</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Access photo library to add cover picture</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Access current location to index near by shops</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Access current location to index near by shops</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access photo library to add cover picture</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

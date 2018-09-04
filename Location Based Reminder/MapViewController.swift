@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import UserNotifications
 
 class MapViewController: UIViewController {
     
@@ -54,6 +55,9 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Init the notification
+        LocalPushManager.shared.requestAuthorization()
+        
         // Initialize the location manager.
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -76,12 +80,21 @@ class MapViewController: UIViewController {
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         mapView.isHidden = true
-        
+
         listLikelyPlaces()
-        
-        //Create geofence
-        let geoFenceRegion: CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 10.729442, longitude: 106.692971), radius: 10, identifier: "RMIT")
-        locationManager.startMonitoring(for: geoFenceRegion)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(GlobalVariables.lat)
+        print(GlobalVariables.long)
+    }
+    
+    func setUpGeofenceForPlayaGrandeBeach() {
+        let geofenceRegionCenter = CLLocationCoordinate2DMake(GlobalVariables.lat, GlobalVariables.long);
+        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 10, identifier: "RMIT");
+        geofenceRegion.notifyOnExit = true;
+        geofenceRegion.notifyOnEntry = true;
+        self.locationManager.startMonitoring(for: geofenceRegion)
     }
     
     // Populate the array with the list of likely places.
@@ -141,16 +154,30 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
     
+    //Notify user when enter region
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("Entered: \(region.identifier)")
+        print("Welcome to Playa Grande! If the waves are good, you can try surfing!")
+        //Good place to schedule a local notification
+        let timer:String = "5"
+        guard let time = TimeInterval(timer) else { return }
+        LocalPushManager.shared.sendLocalPush(in: time)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("Exited: \(region.identifier)")
+        print("Bye! Hope you had a great day at the beach!")
+        //Good place to schedule a local notification
+        let timer:String = "5"
+        guard let time = TimeInterval(timer) else { return }
+        LocalPushManager.shared.sendLocalPush(in: time)
     }
     
     // Handle authorization for the location manager.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        if (status == CLAuthorizationStatus.authorizedAlways) {
+            self.setUpGeofenceForPlayaGrandeBeach()
+        }
+        
         switch status {
         case .restricted:
             print("Location access was restricted.")

@@ -12,6 +12,8 @@
 		9B339BE7213C59CA00FDEC37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B339BE4213C59CA00FDEC37 /* MapViewController.swift */; };
 		9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF02132B3FF004B6A87 /* Food101.mlmodel */; };
 		9B893BF32132B601004B6A87 /* SupportFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF22132B601004B6A87 /* SupportFunctions.swift */; };
+		9B9C88D6213D977300FBAB94 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9C88D5213D977300FBAB94 /* Global.swift */; };
+		9B9ED8E0213EB896006EC2EA /* LocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED8DF213EB896006EC2EA /* LocalPushManager.swift */; };
 		9BC9C9E4212A6E2400BB8F8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9E3212A6E2400BB8F8D /* AppDelegate.swift */; };
 		9BC9C9E9212A6E2400BB8F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9C9E7212A6E2400BB8F8D /* Main.storyboard */; };
 		9BC9C9EC212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9EA212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld */; };
@@ -34,6 +36,8 @@
 		9B339BE4213C59CA00FDEC37 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9B893BF02132B3FF004B6A87 /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
 		9B893BF22132B601004B6A87 /* SupportFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
+		9B9C88D5213D977300FBAB94 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		9B9ED8DF213EB896006EC2EA /* LocalPushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushManager.swift; sourceTree = "<group>"; };
 		9BC9C9E0212A6E2400BB8F8D /* Location Based Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Based Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC9C9E3212A6E2400BB8F8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC9C9E8212A6E2400BB8F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				9B339BE4213C59CA00FDEC37 /* MapViewController.swift */,
 				9B339BE3213C59CA00FDEC37 /* PlacesViewController.swift */,
 				9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */,
+				9B9C88D5213D977300FBAB94 /* Global.swift */,
+				9B9ED8DF213EB896006EC2EA /* LocalPushManager.swift */,
 				9BC9C9E7212A6E2400BB8F8D /* Main.storyboard */,
 				9BC9C9ED212A6E2700BB8F8D /* Assets.xcassets */,
 				9BC9C9EF212A6E2700BB8F8D /* LaunchScreen.storyboard */,
@@ -156,6 +162,11 @@
 				TargetAttributes = {
 					9BC9C9DF212A6E2400BB8F8D = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -272,7 +283,9 @@
 				9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */,
 				9B339BE6213C59CA00FDEC37 /* PlacesViewController.swift in Sources */,
 				9BC9C9EC212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld in Sources */,
+				9B9C88D6213D977300FBAB94 /* Global.swift in Sources */,
 				9BC9C9FB212A705300BB8F8D /* ListingSongsTableViewController.swift in Sources */,
+				9B9ED8E0213EB896006EC2EA /* LocalPushManager.swift in Sources */,
 				9BF4A226213322C600A6E935 /* UIUtilities.swift in Sources */,
 				9B339BE7213C59CA00FDEC37 /* MapViewController.swift in Sources */,
 				9BC9C9FD212A722B00BB8F8D /* EditSongViewController.swift in Sources */,
