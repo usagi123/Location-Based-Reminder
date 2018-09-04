@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Ask user to grant all permission
         LocalPushManager.shared.requestAuthorization() //Notification
-        locationManager.requestAlwaysAuthorization() //Location
+        CLLocationManager().requestAlwaysAuthorization() //Location
         return true
     }
 
