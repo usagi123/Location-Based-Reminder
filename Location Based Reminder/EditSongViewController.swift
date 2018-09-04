@@ -9,11 +9,39 @@
 import UIKit
 import SafariServices
 
+struct GlobalVariables {
+    static var titleIdentifier: String = String()
+    static var lat: Double = Double()
+    static var long: Double = Double()
+    static var visionType: String = String()
+    static var visionType1: String = String()
+    static var visionType2: String = String()
+    static var visionType3: String = String()
+    static var visionType4: String = String()
+}
+
 class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var item: Item!
     var editToggle: Bool = false
+    
+//    var visionType: String?
+//    var visionType1 = ""
+//    var visionType2 = ""
+    
+    func determineType() {
+        GlobalVariables.visionType = item.type!
+        GlobalVariables.titleIdentifier = item.title!
+        
+        if GlobalVariables.visionType.contains("Food") || GlobalVariables.visionType.contains("Fruit") || GlobalVariables.visionType.contains("Vegetable") {
+            GlobalVariables.visionType1 = "supermarket"
+            GlobalVariables.visionType2 = "shopping_mall"
+            GlobalVariables.visionType3 = "convenience_store"
+            GlobalVariables.visionType4 = "department_store"
+            
+        } 
+    }
     
     @IBOutlet weak var locationText: UITextView!
     @IBOutlet weak var titleText: UITextView!
@@ -72,8 +100,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         locationText.isEditable = true
         titleText.isEditable = true
-        latitudeText.isEditable = true
-        longitudeText.isEditable = true
         imageView.isUserInteractionEnabled = true
     }
     
@@ -81,8 +107,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         locationText.isEditable = false
         titleText.isEditable = false
-        latitudeText.isEditable = false
-        longitudeText.isEditable = false
         imageView.isUserInteractionEnabled = false
     }
     
@@ -95,8 +119,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
             //Switch to edit mode when Edit button was pressed
             guard let newLocation = locationText.text,
                 let newTitle = titleText.text,
-                let newLatitude = latitudeText.text,
-                let newLongitude = longitudeText.text,
                 let newImage = imageView.image else  {
                     return
             }
@@ -104,8 +126,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
             //Assign which attribute belong to which entity so they can load correctly into their field (Read)
             item.location = newLocation
             item.title = newTitle
-            item.latitude = newLatitude
-            item.longitude = newLongitude
             item.image = UIImageJPEGRepresentation(newImage, 1)! as Data //Convert Binary data from Core Data to UIImage data for display
             
             updateHeadingOutlet.text = "Update Song"
@@ -115,8 +135,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         case true:
             guard let newLocation = locationText.text,
                 let newTitle = titleText.text,
-                let newLatitude = latitudeText.text,
-                let newLongitude = longitudeText.text,
                 let newImage = imageView.image else  {
                     return
             }
@@ -141,8 +159,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
                 //Save new data from inside all fields back to Core Data (Update)
                 item.location = newLocation
                 item.title = newTitle
-                item.latitude = newLatitude
-                item.longitude = newLongitude
                 item.image = UIImageJPEGRepresentation(newImage, 1)! as Data
                 
                 (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -173,13 +189,18 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         locationText!.delegate = self
         titleText!.delegate = self
-        latitudeText!.delegate = self
-        latitudeText.keyboardType = .numberPad
         let img = UIImage(data: item.image! as Data)
         imageView.image = img
         
         configureEntryData(entry: item)
         print(item)
+
+        determineType()
+        print(GlobalVariables.visionType1)
+        print(GlobalVariables.visionType2)
+        print(GlobalVariables.lat)
+        print(GlobalVariables.long)
+        print(GlobalVariables.titleIdentifier)
         
         //Move the UI for the keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -215,15 +236,13 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         guard let text = entry.location,
             let title = entry.title,
-            let latitude = entry.latitude,
-            let longitude = entry.longitude else {
+            let type = entry.type else {
                 return
         }
         
         locationText!.text = text
         titleText!.text = title
-        latitudeText!.text = latitude
-        longitudeText!.text = longitude
+        GlobalVariables.visionType = type
     }
     
     //View keyboard everytime clicking into field

@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey("AIzaSyBhgyEAqwxMs2_xP9J5mLABFe2QmI-z70o") //Google place api key
         GMSServices.provideAPIKey("AIzaSyBhgyEAqwxMs2_xP9J5mLABFe2QmI-z70o") //Google map api key
+        
+        //Ask user to grant all permission
+        LocalPushManager.shared.requestAuthorization() //Notification
+        locationManager.requestAlwaysAuthorization() //Location
         return true
     }
 
