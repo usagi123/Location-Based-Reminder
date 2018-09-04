@@ -18,7 +18,6 @@ class PlacesViewController: UIViewController {
     // An array to hold the list of possible locations.
     // TODO: create a switch case for all label types google places support
     var likelyPlaces: [GMSPlace] = []
-    var itemCheck: NSManagedObject? = nil
     var selectedPlace: GMSPlace?
     var lengthOfArray: Int = 0
 

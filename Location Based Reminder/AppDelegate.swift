@@ -27,7 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Ask user to grant all permission
         LocalPushManager.shared.requestAuthorization() //Notification
         CLLocationManager().requestAlwaysAuthorization() //Location
+        
+        //Background fetch
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum) //to minimum
         return true
+    }
+    
+    //Background fetch any function you want
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if let vc = window?.rootViewController as? PlacesViewController {
+            vc.viewDidLoad()
+            vc.viewWillAppear(true)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
