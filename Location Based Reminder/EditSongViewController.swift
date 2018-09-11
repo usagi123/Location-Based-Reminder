@@ -26,10 +26,6 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
     var item: Item!
     var editToggle: Bool = false
     
-//    var visionType: String?
-//    var visionType1 = ""
-//    var visionType2 = ""
-    
     func determineType() {
         GlobalVariables.visionType = item.type!
         GlobalVariables.titleIdentifier = item.title!
@@ -39,8 +35,7 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
             GlobalVariables.visionType2 = "shopping_mall"
             GlobalVariables.visionType3 = "convenience_store"
             GlobalVariables.visionType4 = "department_store"
-            
-        } 
+        }
     }
     
     @IBOutlet weak var locationText: UITextView!
@@ -94,18 +89,16 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
             break
         }
     }
-
+    
     //Prepare field to be editable between edit/view mode
     func textFieldActive() {
         
-        locationText.isEditable = true
         titleText.isEditable = true
         imageView.isUserInteractionEnabled = true
     }
     
     func textFieldDeactive() {
         
-        locationText.isEditable = false
         titleText.isEditable = false
         imageView.isUserInteractionEnabled = false
     }
@@ -117,14 +110,12 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
         switch editToggle {
         case false:
             //Switch to edit mode when Edit button was pressed
-            guard let newLocation = locationText.text,
-                let newTitle = titleText.text,
+            guard let newTitle = titleText.text,
                 let newImage = imageView.image else  {
                     return
             }
             
             //Assign which attribute belong to which entity so they can load correctly into their field (Read)
-            item.location = newLocation
             item.title = newTitle
             item.image = UIImageJPEGRepresentation(newImage, 1)! as Data //Convert Binary data from Core Data to UIImage data for display
             
@@ -133,31 +124,21 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
             textFieldActive()
             editToggle = true
         case true:
-            guard let newLocation = locationText.text,
-                let newTitle = titleText.text,
+            guard let newTitle = titleText.text,
                 let newImage = imageView.image else  {
                     return
             }
             
             //If one field is empty then alert user to fully filled it before saving
-            if ((titleText?.text.isEmpty)! || (locationText?.text.isEmpty)! || (latitudeText?.text.isEmpty)! || (longitudeText?.text.isEmpty)!) {
+            if ((titleText?.text.isEmpty)! || (locationText?.text.isEmpty)!) {
                 
                 let alert = UIAlertController(title: "Blank field", message: "Please fully filled all details", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: .default) { action in })
                 
                 self.present(alert, animated: true, completion: nil)
-                
-            } else if Double(latitudeText.text) == nil { //Filter number only in the year field
-                
-                print("Error, not number input")
-                let alert = UIAlertController(title: "Wrong data type", message: "Please type number only", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Okay", style: .default) { action in })
-                self.present(alert, animated: true, completion: nil)
-                
             } else {
                 
                 //Save new data from inside all fields back to Core Data (Update)
-                item.location = newLocation
                 item.title = newTitle
                 item.image = UIImageJPEGRepresentation(newImage, 1)! as Data
                 
@@ -187,14 +168,13 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationText!.delegate = self
         titleText!.delegate = self
         let img = UIImage(data: item.image! as Data)
         imageView.image = img
         
         configureEntryData(entry: item)
         print(item)
-
+        
         determineType()
         print(GlobalVariables.visionType1)
         print(GlobalVariables.visionType2)
@@ -234,13 +214,11 @@ class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePicke
     //Call Core Data entity and attributes
     func configureEntryData(entry: Item) {
         
-        guard let text = entry.location,
-            let title = entry.title,
+        guard let title = entry.title,
             let type = entry.type else {
                 return
         }
         
-        locationText!.text = text
         titleText!.text = title
         GlobalVariables.visionType = type
     }

@@ -10,6 +10,7 @@ import UIKit
 import GooglePlaces
 import SwiftyJSON
 import CoreData
+import Foundation
 
 class PlacesViewController: UIViewController {
     
@@ -18,26 +19,38 @@ class PlacesViewController: UIViewController {
     // An array to hold the list of possible locations.
     // TODO: create a switch case for all label types google places support
     var likelyPlaces: [GMSPlace] = []
-    var itemCheck: NSManagedObject? = nil
     var selectedPlace: GMSPlace?
     var lengthOfArray: Int = 0
-
+    
     var placesResult: [GMSPlace] = []
     
     // Cell reuse id (cells that scroll out of view can be reused).
     let cellReuseIdentifier = "cell"
     
     var item: Item!
-    var visionType: String?
-    var visionType1 = ""
-    var visionType2 = ""
     
-    func determineType() {
-
-        if visionType?.contains("Food") == true {
-            visionType1 = "supermarket"
-            visionType2 = "shopping_mall"
-        }
+    var timer = Timer() //did not init until use for the timer countdown, saving memory
+    func scheduledTimerWithTimeInterval() {
+        //        switch UIApplication.shared.applicationState {
+        //        case .background: //only start timer when the application switch to background, in theory
+        //            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+        //        default:
+        //            stopTimer()
+        //        }
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateLocation), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        timer.invalidate()
+        print("Timer invalidate")
+    }
+    
+    @objc func updateLocation() {
+        NSLog("counting")
+        NSLog("\(GlobalVariables.lat)")
+        NSLog("\(GlobalVariables.long)")
+        sortedPlaces()
     }
     
     override func viewDidLoad() {
@@ -53,22 +66,35 @@ class PlacesViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.reloadData()
+        print("Running")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        scheduledTimerWithTimeInterval()
+    }
+    
+    func sortedPlaces() {
         //Sorting based on types that contains keywords
+        var tempR: [GMSPlace] = []
         for i in 0..<likelyPlaces.count {
             
             if ((likelyPlaces[i].types.contains(GlobalVariables.visionType1) || likelyPlaces[i].types.contains(GlobalVariables.visionType2)  || likelyPlaces[i].types.contains(GlobalVariables.visionType3) || likelyPlaces[i].types.contains(GlobalVariables.visionType4)) && !placesResult.contains(likelyPlaces[i])) {
                 placesResult.append(likelyPlaces[i])
+            } else if !tempR.contains(likelyPlaces[i]) {
+                tempR.append(likelyPlaces[i])
             }
         }
         likelyPlaces.removeAll()
-        likelyPlaces = placesResult
+        if !placesResult.isEmpty {
+            likelyPlaces = placesResult
+        } else {
+            likelyPlaces = tempR
+        }
+        
         GlobalVariables.lat = likelyPlaces[0].coordinate.latitude
         GlobalVariables.long = likelyPlaces[0].coordinate.longitude
         tableView.reloadData()
+        print("Running")
     }
     
     // Pass the selected place to the new view controller.
