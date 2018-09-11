@@ -14,7 +14,7 @@ import Firebase
 import CoreGraphics
 
 class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     var imagePickerController: UIImagePickerController!
     lazy var vision = Vision.vision()
     
@@ -66,7 +66,7 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
         picker.dismiss(animated: true, completion: nil)
         detectImageContent()
         detectLabels(image: imageEntryImageView.image)
-//        detectCloudLabels(image: imageEntryImageView.image)
+        //        detectCloudLabels(image: imageEntryImageView.image)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -81,9 +81,9 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
     @IBAction func saveContact(_ sender: Any) {
         
         //If any fields are empty, app will reject and pop a alert for user to fill it or cancel creating new entry
-        if (locationEntryTextView?.text.isEmpty)! || locationEntryTextView?.text == "Buy Apple" || (itemEntryTextView?.text.isEmpty)! || itemEntryTextView?.text == "Title" || imageEntryImageView.image == UIImage(named: "011429230786001.jpeg") {
+        if (itemEntryTextView?.text.isEmpty)! || itemEntryTextView?.text == "" || imageEntryImageView.image == UIImage(named: "011429230786001.jpeg") {
             
-//            print("No Data")
+            //            print("No Data")
             let alert = UIAlertController(title: "Blank entry", message: "Please fully filled all details.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default) { action in })
             
@@ -93,7 +93,6 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
             //Let data from the fields saved into Core Data
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let newEntry = Item(context: context)
-            newEntry.location = locationEntryTextView?.text!
             newEntry.title = itemEntryTextView?.text!
             newEntry.type = lblResult?.text!
             
@@ -115,7 +114,7 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
         
         detectImageContent()
         detectLabels(image: imageEntryImageView.image)
-//        detectCloudLabels(image: imageEntryImageView.image)
+        //        detectCloudLabels(image: imageEntryImageView.image)
         
         //Move the UI for the keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -230,10 +229,10 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
                 return "Label: \(String(describing: feature.label)), " +
                     "Confidence: \(feature.confidence), " +
                     "EntityID: \(String(describing: feature.entityID)), " +
-                    "Frame: \(feature.frame)"
+                "Frame: \(feature.frame)"
                 }!
-//                .joined(separator: "\n")
-//            self.showResults()
+            //                .joined(separator: "\n")
+            //            self.showResults()
         }
     }
     
@@ -288,7 +287,7 @@ class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePic
             DispatchQueue.main.async { [weak self] in
                 let resultString = topResult.identifier
                 let normalString = resultString.replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
-//                self?.lblResult.text = "Detect object as \(topResult.identifier) with \(Int(topResult.confidence * 100))% confidence"
+                //                self?.lblResult.text = "Detect object as \(topResult.identifier) with \(Int(topResult.confidence * 100))% confidence"
                 self?.itemEntryTextView?.text = "Buy \(normalString)"
                 GlobalVariables.titleIdentifier = normalString
             }

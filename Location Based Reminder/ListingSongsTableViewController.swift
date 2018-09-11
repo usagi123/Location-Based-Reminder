@@ -8,9 +8,10 @@
 
 import UIKit
 import SafariServices
+import CoreLocation
 
 class ListingSongsTableViewController: UITableViewController {
-
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items: [Item] = []
     var item: Item!
@@ -19,6 +20,10 @@ class ListingSongsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Ask user to grant all permission
+        LocalPushManager.shared.requestAuthorization() //Notification
+        CLLocationManager().requestAlwaysAuthorization() //Location
         
         self.tableView.estimatedRowHeight = 10
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -71,31 +76,30 @@ extension ListingSongsTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HeadlineTableViewCell
         
         cell.headlineTitleLabel.text = filteredData[indexPath.row].title!
-        cell.headlineLocationLabel.text = "at " + filteredData[indexPath.row].location!
         cell.headlineImageView.image = UIImage(data: filteredData[indexPath.row].image!)
-//        let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.tappedOnView))
+        //        let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.tappedOnView))
         
-//        singleTap.numberOfTapsRequired = 1
-//        singleTap.numberOfTouchesRequired = 1
-//        cell.headlineImageView.addGestureRecognizer(singleTap)
+        //        singleTap.numberOfTapsRequired = 1
+        //        singleTap.numberOfTouchesRequired = 1
+        //        cell.headlineImageView.addGestureRecognizer(singleTap)
         
         return cell
     }
     /*
-    //Tap image in cell to open URL
-    @objc func tappedOnView(onView gesture: UITapGestureRecognizer) {
-        let location: CGPoint = gesture.location(in: tableView)
-        let indexPath: IndexPath? = tableView.indexPathForRow(at: location)
-        var urlString = filteredData[(indexPath?.row)!].url //open map with lat and long
-        if (((urlString?.lowercased().range(of: "http://")) != nil) || ((urlString?.lowercased().range(of: "https://")) != nil)) {
-        } else {
-            urlString = "http://" + urlString!
-        }
-        let url: URL = URL(string: urlString!)!
-        let safariViewController = SFSafariViewController(url: url)
-        self.present(safariViewController, animated: true, completion: nil)
-    }
- */
+     //Tap image in cell to open URL
+     @objc func tappedOnView(onView gesture: UITapGestureRecognizer) {
+     let location: CGPoint = gesture.location(in: tableView)
+     let indexPath: IndexPath? = tableView.indexPathForRow(at: location)
+     var urlString = filteredData[(indexPath?.row)!].url //open map with lat and long
+     if (((urlString?.lowercased().range(of: "http://")) != nil) || ((urlString?.lowercased().range(of: "https://")) != nil)) {
+     } else {
+     urlString = "http://" + urlString!
+     }
+     let url: URL = URL(string: urlString!)!
+     let safariViewController = SFSafariViewController(url: url)
+     self.present(safariViewController, animated: true, completion: nil)
+     }
+     */
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
@@ -123,20 +127,20 @@ extension ListingSongsTableViewController {
             
         }
         
-//        let openURL = UITableViewRowAction(style: .default, title: "Open URL") { (action, indexPath) in
-//            let item = self.filteredData[indexPath.row]
-//            var urlString = item.url
-//            if (((urlString?.lowercased().range(of: "http://")) != nil) || ((urlString?.lowercased().range(of: "https://")) != nil)) {
-//            } else {
-//                urlString = "http://" + urlString!
-//            }
-//            let url: URL = URL(string: urlString!)!
-//            let safariViewController = SFSafariViewController(url: url)
-//            self.present(safariViewController, animated: true, completion: nil)
-//        }
-//
+        //        let openURL = UITableViewRowAction(style: .default, title: "Open URL") { (action, indexPath) in
+        //            let item = self.filteredData[indexPath.row]
+        //            var urlString = item.url
+        //            if (((urlString?.lowercased().range(of: "http://")) != nil) || ((urlString?.lowercased().range(of: "https://")) != nil)) {
+        //            } else {
+        //                urlString = "http://" + urlString!
+        //            }
+        //            let url: URL = URL(string: urlString!)!
+        //            let safariViewController = SFSafariViewController(url: url)
+        //            self.present(safariViewController, animated: true, completion: nil)
+        //        }
+        //
         delete.backgroundColor = UIColor(red: 240/255, green: 52/255, blue: 52/255, alpha: 1.0)
-//        openURL.backgroundColor = UIColor(red: 3/255, green: 201/255, blue: 169/255, alpha: 1.0)
+        //        openURL.backgroundColor = UIColor(red: 3/255, green: 201/255, blue: 169/255, alpha: 1.0)
         
         return [delete]
     }
