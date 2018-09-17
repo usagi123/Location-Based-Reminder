@@ -10,7 +10,6 @@
 		9B339BE5213C59CA00FDEC37 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */; };
 		9B339BE6213C59CA00FDEC37 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B339BE3213C59CA00FDEC37 /* PlacesViewController.swift */; };
 		9B339BE7213C59CA00FDEC37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B339BE4213C59CA00FDEC37 /* MapViewController.swift */; };
-		9B862F622147AD070091BC61 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B862F612147AD070091BC61 /* VGG16.mlmodel */; };
 		9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF02132B3FF004B6A87 /* Food101.mlmodel */; };
 		9B893BF32132B601004B6A87 /* SupportFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B893BF22132B601004B6A87 /* SupportFunctions.swift */; };
 		9B9C88D6213D977300FBAB94 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9C88D5213D977300FBAB94 /* Global.swift */; };
@@ -35,7 +34,6 @@
 		9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9B339BE3213C59CA00FDEC37 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		9B339BE4213C59CA00FDEC37 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		9B862F612147AD070091BC61 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = VGG16.mlmodel; path = "../../Location-Based-Reminder-constantly-load/Location Based Reminder/VGG16.mlmodel"; sourceTree = "<group>"; };
 		9B893BF02132B3FF004B6A87 /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
 		9B893BF22132B601004B6A87 /* SupportFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
 		9B9C88D5213D977300FBAB94 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 				9BC9C9F2212A6E2700BB8F8D /* Info.plist */,
 				9BF4A2212133159400A6E935 /* GoogleService-Info.plist */,
 				9BC9C9EA212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld */,
-				9B862F612147AD070091BC61 /* VGG16.mlmodel */,
 				9B893BF02132B3FF004B6A87 /* Food101.mlmodel */,
 			);
 			path = "Location Based Reminder";
@@ -281,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B862F622147AD070091BC61 /* VGG16.mlmodel in Sources */,
 				9B339BE5213C59CA00FDEC37 /* UIViewExtension.swift in Sources */,
 				9BF4A2242133216500A6E935 /* UIImage+VisionDetection.swift in Sources */,
 				9B893BF12132B3FF004B6A87 /* Food101.mlmodel in Sources */,
