@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "011429230786001.png",
+      "filename" : "fruit-salad-honey-lime-fbig1-2.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fruit-salad-honey-lime-fbig1-1.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fruit-salad-honey-lime-fbig1.jpg",
       "scale" : "3x"
     }
   ],

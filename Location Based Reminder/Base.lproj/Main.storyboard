@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gala-single-nosticker" translatesAutoresizingMaskIntoConstraints="NO" id="yQL-k4-Pf9">
+                                        <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="yQL-k4-Pf9">
                                             <rect key="frame" x="20" y="11" width="100" height="100"/>
                                             <gestureRecognizers/>
                                             <constraints>
@@ -120,7 +120,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                             </textView>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gala-single-nosticker" translatesAutoresizingMaskIntoConstraints="NO" id="vif-Lh-HtB">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="vif-Lh-HtB">
                                                 <rect key="frame" x="57" y="79" width="300" height="300"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -278,7 +278,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                             </textView>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gala-single-nosticker" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-Ui-Bmk">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-Ui-Bmk">
                                                 <rect key="frame" x="57" y="79" width="300" height="300"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -481,7 +481,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Gala-single-nosticker" width="500" height="500"/>
+        <image name="Sample" width="2212" height="2212"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2hw-XH-mYM"/>

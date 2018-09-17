@@ -73,7 +73,7 @@ class CreateReminderViewController: UIViewController, UITextViewDelegate, UIImag
     @IBAction func saveContact(_ sender: Any) {
         
         //If any fields are empty, app will reject and pop a alert for user to fill it or cancel creating new entry
-        if (itemEntryTextView?.text.isEmpty)! || itemEntryTextView?.text == "" || imageEntryImageView.image == UIImage(named: "011429230786001.jpeg") {
+        if (itemEntryTextView?.text.isEmpty)! || itemEntryTextView?.text == "" || imageEntryImageView.image == UIImage(named: "ImgHolder.jpeg") {
             
             //            print("No Data")
             let alert = UIAlertController(title: "Blank entry", message: "Please fully filled all details.", preferredStyle: .alert)
