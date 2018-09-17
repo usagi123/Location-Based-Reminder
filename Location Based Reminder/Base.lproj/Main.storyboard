@@ -22,34 +22,38 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="Lr6-Ou-6Mz" customClass="HeadlineTableViewCell" customModule="Location_Based_Reminder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lr6-Ou-6Mz" id="gpc-dF-d9A">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="Lr6-Ou-6Mz" id="gpc-dF-d9A">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gala-single-nosticker" translatesAutoresizingMaskIntoConstraints="NO" id="yQL-k4-Pf9">
-                                            <rect key="frame" x="20" y="11" width="97" height="97"/>
+                                        <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gala-single-nosticker" translatesAutoresizingMaskIntoConstraints="NO" id="yQL-k4-Pf9">
+                                            <rect key="frame" x="20" y="11" width="100" height="100"/>
                                             <gestureRecognizers/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="97" id="R42-eb-Vtt"/>
-                                                <constraint firstAttribute="height" constant="97" id="RXq-f8-gvj"/>
+                                                <constraint firstAttribute="width" secondItem="yQL-k4-Pf9" secondAttribute="height" multiplier="1:1" id="R1s-iH-xsM"/>
+                                                <constraint firstAttribute="width" constant="100" id="XL6-7d-ew9"/>
+                                                <constraint firstAttribute="height" constant="100" id="jR7-RQ-LZ1"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Apple" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vz-24-4ye">
-                                            <rect key="frame" x="125" y="11" width="269" height="97"/>
+                                            <rect key="frame" x="153" y="10" width="241" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="7jO-MC-wRC"/>
+                                                <constraint firstAttribute="height" constant="90" id="DLA-KU-Cae"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="8vz-24-4ye" firstAttribute="centerY" secondItem="gpc-dF-d9A" secondAttribute="centerY" id="Fb0-Cq-c42"/>
-                                        <constraint firstItem="yQL-k4-Pf9" firstAttribute="leading" secondItem="gpc-dF-d9A" secondAttribute="leadingMargin" id="I0b-gT-jqR"/>
-                                        <constraint firstItem="8vz-24-4ye" firstAttribute="trailing" secondItem="gpc-dF-d9A" secondAttribute="trailingMargin" id="LZe-Vu-6TF"/>
-                                        <constraint firstItem="yQL-k4-Pf9" firstAttribute="top" secondItem="gpc-dF-d9A" secondAttribute="topMargin" id="OOB-U4-Prz"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="yQL-k4-Pf9" secondAttribute="bottom" constant="1" id="Qr5-0W-BRi"/>
-                                        <constraint firstItem="8vz-24-4ye" firstAttribute="bottom" secondItem="yQL-k4-Pf9" secondAttribute="bottom" id="Zfy-QL-fAj"/>
-                                        <constraint firstItem="8vz-24-4ye" firstAttribute="leading" secondItem="yQL-k4-Pf9" secondAttribute="trailing" constant="8" symbolic="YES" id="eE3-90-z63"/>
-                                        <constraint firstItem="8vz-24-4ye" firstAttribute="top" secondItem="yQL-k4-Pf9" secondAttribute="top" id="yFA-aF-9rk"/>
+                                        <constraint firstAttribute="trailing" secondItem="8vz-24-4ye" secondAttribute="trailing" constant="20" id="7vB-wi-ubd"/>
+                                        <constraint firstItem="8vz-24-4ye" firstAttribute="leading" secondItem="yQL-k4-Pf9" secondAttribute="trailing" constant="33" id="A9M-BN-GYk"/>
+                                        <constraint firstItem="8vz-24-4ye" firstAttribute="top" secondItem="gpc-dF-d9A" secondAttribute="top" constant="10" id="B6r-D9-UoS"/>
+                                        <constraint firstAttribute="bottom" secondItem="8vz-24-4ye" secondAttribute="bottom" constant="11.67" id="JNM-re-gHj"/>
+                                        <constraint firstItem="yQL-k4-Pf9" firstAttribute="leading" secondItem="gpc-dF-d9A" secondAttribute="leadingMargin" id="LRh-2A-Zcx"/>
+                                        <constraint firstItem="yQL-k4-Pf9" firstAttribute="top" secondItem="gpc-dF-d9A" secondAttribute="topMargin" id="OkI-3R-L9h"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yQL-k4-Pf9" secondAttribute="bottom" constant="1" id="fX8-YP-Bfp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -77,7 +81,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEH-ze-XLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915" y="836"/>
+            <point key="canvasLocation" x="914.49275362318849" y="835.59782608695662"/>
         </scene>
         <!--Create Reminder View Controller-->
         <scene sceneID="jiX-gr-UFR">
@@ -151,6 +155,7 @@
                                             <constraint firstItem="Gvx-Xj-loQ" firstAttribute="leading" secondItem="eVr-LL-WbN" secondAttribute="leading" constant="20" id="JP4-0y-h13"/>
                                             <constraint firstAttribute="trailing" secondItem="1TY-an-OTO" secondAttribute="trailing" constant="24" id="KIW-Fj-L3a"/>
                                             <constraint firstItem="1TY-an-OTO" firstAttribute="top" secondItem="eVr-LL-WbN" secondAttribute="top" constant="34" id="QkV-Fy-aOz"/>
+                                            <constraint firstItem="1TY-an-OTO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gvx-Xj-loQ" secondAttribute="trailing" constant="8" symbolic="YES" id="SCT-WF-TZq"/>
                                             <constraint firstItem="7QT-gV-2QJ" firstAttribute="top" secondItem="bfo-eT-9gH" secondAttribute="bottom" constant="8" id="XpL-Kl-GXj"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7QT-gV-2QJ" secondAttribute="bottom" constant="20" id="gDT-Dz-orT"/>
                                             <constraint firstItem="bfo-eT-9gH" firstAttribute="top" secondItem="vif-Lh-HtB" secondAttribute="bottom" constant="8" id="gpf-By-hva"/>
@@ -309,6 +314,7 @@
                                             <constraint firstItem="fJC-Mk-Ohc" firstAttribute="leading" secondItem="VuI-Qc-B0S" secondAttribute="leading" constant="20" id="fyE-p5-nmK"/>
                                             <constraint firstItem="pyc-Ui-Bmk" firstAttribute="centerX" secondItem="VuI-Qc-B0S" secondAttribute="centerX" id="j7A-7E-cTq"/>
                                             <constraint firstItem="Vvm-IT-jeY" firstAttribute="top" secondItem="pyc-Ui-Bmk" secondAttribute="bottom" constant="8" id="uis-7F-NFS"/>
+                                            <constraint firstItem="jz2-of-uSR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fJC-Mk-Ohc" secondAttribute="trailing" constant="8" symbolic="YES" id="ySa-QY-XuY"/>
                                             <constraint firstItem="0wP-tG-X5y" firstAttribute="top" secondItem="Vvm-IT-jeY" secondAttribute="bottom" constant="8" id="zwL-Vt-oRd"/>
                                         </constraints>
                                     </view>
@@ -410,7 +416,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-om-5mH">
-                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Choose a place" id="hsm-ko-ZS0">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="eCb-bg-sq2"/>
@@ -418,10 +424,10 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f3C-o2-Gim">
-                                <rect key="frame" x="0.0" y="108" width="414" height="628"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gcZ-Yw-ctA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gcZ-Yw-ctA">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gcZ-Yw-ctA" id="0YQ-qR-Nml">
@@ -478,6 +484,6 @@
         <image name="Gala-single-nosticker" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LU0-WN-mEX"/>
+        <segue reference="2hw-XH-mYM"/>
     </inferredMetricsTieBreakers>
 </document>
