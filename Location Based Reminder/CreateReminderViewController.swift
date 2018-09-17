@@ -5,7 +5,7 @@ import Vision
 import Firebase
 import CoreGraphics
 
-class CreateSongViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateReminderViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var imagePickerController: UIImagePickerController!
     lazy var vision = Vision.vision()

@@ -2,7 +2,7 @@ import UIKit
 import SafariServices
 import CoreLocation
 
-class ListingSongsTableViewController: UITableViewController {
+class ListingReminderViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items: [Item] = []
@@ -61,7 +61,7 @@ class HeadlineTableViewCell: UITableViewCell {
 }
 
 //Mandatory stuff to construct a table view cell
-extension ListingSongsTableViewController {
+extension ListingReminderViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -141,7 +141,7 @@ extension ListingSongsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "UpdateVC" {
-            let updateVC = segue.destination as! EditSongViewController
+            let updateVC = segue.destination as! EditReminderViewController
             updateVC.item = filteredData[selectedIndex!]
         }
     }

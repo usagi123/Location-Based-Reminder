@@ -13,7 +13,7 @@
         <!--Location Based Reminder-->
         <scene sceneID="exc-RR-egu">
             <objects>
-                <tableViewController id="zaf-L7-KNS" customClass="ListingSongsTableViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="zaf-L7-KNS" customClass="ListingReminderViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="222" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZjE-t9-3we">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="915" y="836"/>
         </scene>
-        <!--Create Song View Controller-->
+        <!--Create Reminder View Controller-->
         <scene sceneID="jiX-gr-UFR">
             <objects>
-                <viewController id="d4g-r6-USE" customClass="CreateSongViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d4g-r6-USE" customClass="CreateReminderViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VbO-fp-Tgf"/>
                         <viewControllerLayoutGuide type="bottom" id="lLg-ur-Pu8"/>
@@ -230,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="265" y="836"/>
         </scene>
-        <!--Edit Song View Controller-->
+        <!--Edit Reminder View Controller-->
         <scene sceneID="bRs-wC-ngZ">
             <objects>
-                <viewController storyboardIdentifier="UpdateVC" id="094-uY-zc4" customClass="EditSongViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateVC" id="094-uY-zc4" customClass="EditReminderViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rL0-Cw-fwg"/>
                         <viewControllerLayoutGuide type="bottom" id="hLV-OQ-cDR"/>
@@ -421,7 +421,7 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="628"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gcZ-Yw-ctA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gcZ-Yw-ctA">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gcZ-Yw-ctA" id="0YQ-qR-Nml">

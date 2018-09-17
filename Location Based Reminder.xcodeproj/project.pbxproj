@@ -18,9 +18,9 @@
 		9BC9C9EC212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9EA212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld */; };
 		9BC9C9EE212A6E2700BB8F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9C9ED212A6E2700BB8F8D /* Assets.xcassets */; };
 		9BC9C9F1212A6E2700BB8F8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9C9EF212A6E2700BB8F8D /* LaunchScreen.storyboard */; };
-		9BC9C9F9212A701000BB8F8D /* CreateSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9F8212A701000BB8F8D /* CreateSongViewController.swift */; };
-		9BC9C9FB212A705300BB8F8D /* ListingSongsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9FA212A705300BB8F8D /* ListingSongsTableViewController.swift */; };
-		9BC9C9FD212A722B00BB8F8D /* EditSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9FC212A722B00BB8F8D /* EditSongViewController.swift */; };
+		9BC9C9F9212A701000BB8F8D /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9F8212A701000BB8F8D /* CreateReminderViewController.swift */; };
+		9BC9C9FB212A705300BB8F8D /* ListingReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9FA212A705300BB8F8D /* ListingReminderViewController.swift */; };
+		9BC9C9FD212A722B00BB8F8D /* EditReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9C9FC212A722B00BB8F8D /* EditReminderViewController.swift */; };
 		9BF4A2222133159500A6E935 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF4A2212133159400A6E935 /* GoogleService-Info.plist */; };
 		9BF4A2242133216500A6E935 /* UIImage+VisionDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4A2232133216500A6E935 /* UIImage+VisionDetection.swift */; };
 		9BF4A226213322C600A6E935 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4A225213322C600A6E935 /* UIUtilities.swift */; };
@@ -43,9 +43,9 @@
 		9BC9C9ED212A6E2700BB8F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BC9C9F0212A6E2700BB8F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BC9C9F2212A6E2700BB8F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BC9C9F8212A701000BB8F8D /* CreateSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSongViewController.swift; sourceTree = "<group>"; };
-		9BC9C9FA212A705300BB8F8D /* ListingSongsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingSongsTableViewController.swift; sourceTree = "<group>"; };
-		9BC9C9FC212A722B00BB8F8D /* EditSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSongViewController.swift; sourceTree = "<group>"; };
+		9BC9C9F8212A701000BB8F8D /* CreateReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
+		9BC9C9FA212A705300BB8F8D /* ListingReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingReminderViewController.swift; sourceTree = "<group>"; };
+		9BC9C9FC212A722B00BB8F8D /* EditReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReminderViewController.swift; sourceTree = "<group>"; };
 		9BF4A2212133159400A6E935 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BF4A2232133216500A6E935 /* UIImage+VisionDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+VisionDetection.swift"; sourceTree = "<group>"; };
 		9BF4A225213322C600A6E935 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
@@ -95,14 +95,14 @@
 			isa = PBXGroup;
 			children = (
 				9BC9C9E3212A6E2400BB8F8D /* AppDelegate.swift */,
-				9BC9C9FA212A705300BB8F8D /* ListingSongsTableViewController.swift */,
-				9BC9C9F8212A701000BB8F8D /* CreateSongViewController.swift */,
+				9BC9C9FA212A705300BB8F8D /* ListingReminderViewController.swift */,
+				9BC9C9F8212A701000BB8F8D /* CreateReminderViewController.swift */,
+				9BC9C9FC212A722B00BB8F8D /* EditReminderViewController.swift */,
 				9BF4A2232133216500A6E935 /* UIImage+VisionDetection.swift */,
 				9BF4A225213322C600A6E935 /* UIUtilities.swift */,
-				9BC9C9FC212A722B00BB8F8D /* EditSongViewController.swift */,
+				9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */,
 				9B339BE4213C59CA00FDEC37 /* MapViewController.swift */,
 				9B339BE3213C59CA00FDEC37 /* PlacesViewController.swift */,
-				9B339BE2213C59CA00FDEC37 /* UIViewExtension.swift */,
 				9B9C88D5213D977300FBAB94 /* Global.swift */,
 				9B9ED8DF213EB896006EC2EA /* LocalPushManager.swift */,
 				9BC9C9E7212A6E2400BB8F8D /* Main.storyboard */,
@@ -281,13 +281,13 @@
 				9B339BE6213C59CA00FDEC37 /* PlacesViewController.swift in Sources */,
 				9BC9C9EC212A6E2400BB8F8D /* FavoriteSongs.xcdatamodeld in Sources */,
 				9B9C88D6213D977300FBAB94 /* Global.swift in Sources */,
-				9BC9C9FB212A705300BB8F8D /* ListingSongsTableViewController.swift in Sources */,
+				9BC9C9FB212A705300BB8F8D /* ListingReminderViewController.swift in Sources */,
 				9B9ED8E0213EB896006EC2EA /* LocalPushManager.swift in Sources */,
 				9BF4A226213322C600A6E935 /* UIUtilities.swift in Sources */,
 				9B339BE7213C59CA00FDEC37 /* MapViewController.swift in Sources */,
-				9BC9C9FD212A722B00BB8F8D /* EditSongViewController.swift in Sources */,
+				9BC9C9FD212A722B00BB8F8D /* EditReminderViewController.swift in Sources */,
 				9BC9C9E4212A6E2400BB8F8D /* AppDelegate.swift in Sources */,
-				9BC9C9F9212A701000BB8F8D /* CreateSongViewController.swift in Sources */,
+				9BC9C9F9212A701000BB8F8D /* CreateReminderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ struct GlobalVariables {
     static var visionType4: String = String()
 }
 
-class EditSongViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditReminderViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var item: Item!
