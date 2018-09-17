@@ -1,11 +1,3 @@
-//
-//  PlacesViewController.swift
-//  Location Based Reminder
-//
-//  Created by Mai Pham Quang Huy on 9/2/18.
-//  Copyright © 2018 Mai Pham Quang Huy. All rights reserved.
-//
-
 import UIKit
 import GooglePlaces
 import SwiftyJSON
@@ -90,9 +82,10 @@ class PlacesViewController: UIViewController {
         } else {
             likelyPlaces = tempR
         }
-        
-        GlobalVariables.lat = likelyPlaces[0].coordinate.latitude
-        GlobalVariables.long = likelyPlaces[0].coordinate.longitude
+        if !likelyPlaces.isEmpty {
+            GlobalVariables.lat = likelyPlaces[0].coordinate.latitude
+            GlobalVariables.long = likelyPlaces[0].coordinate.longitude
+        }
         tableView.reloadData()
         print("Running")
     }

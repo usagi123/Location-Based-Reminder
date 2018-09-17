@@ -1,11 +1,3 @@
-//
-//  LocalPushManager.swift
-//  Location Based Reminder
-//
-//  Created by Mai Pham Quang Huy on 9/4/18.
-//  Copyright © 2018 Mai Pham Quang Huy. All rights reserved.
-//
-
 import Foundation
 import UserNotifications
 

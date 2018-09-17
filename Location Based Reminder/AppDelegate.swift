@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Location Based Reminder
-//
-//  Created by Mai Pham Quang Huy on 8/20/18.
-//  Copyright © 2018 Mai Pham Quang Huy. All rights reserved.
-//
-
 import UIKit
 import CoreData
 import Firebase
