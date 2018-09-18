@@ -40,7 +40,7 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
         performSegue(withIdentifier: "checkMap", sender: self)
     }
     
-    @IBAction func dismiss(_ sender: Any) {
+    @objc func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -95,7 +95,7 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
         imageView.isUserInteractionEnabled = false
     }
     
-    @IBOutlet weak var updateHeadingOutlet: UILabel!
+//    @IBOutlet weak var updateHeadingOutlet: UILabel!
     @IBOutlet weak var updateActionOutlet: UIButton!
     @IBAction func updateAction(_ sender: Any) {
         
@@ -111,7 +111,7 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
             item.title = newTitle
             item.image = newImage.jpegData(compressionQuality: 1)! as Data //Convert Binary data from Core Data to UIImage data for display
             
-            updateHeadingOutlet.text = "Update Song"
+//            updateHeadingOutlet.text = "Update Reminder"
             updateActionOutlet.setTitle("Update", for: UIControl.State.normal)
             textFieldActive()
             editToggle = true
@@ -122,8 +122,8 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
             }
             
             //If one field is empty then alert user to fully filled it before saving
-            if ((titleText?.text.isEmpty)! || (locationText?.text.isEmpty)!) {
-                
+            if ((titleText?.text.isEmpty)!) {
+//                || (locationText?.text.isEmpty)!
                 let alert = UIAlertController(title: "Blank field", message: "Please fully filled all details", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: .default) { action in })
                 
@@ -137,7 +137,7 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
                 (UIApplication.shared.delegate as! AppDelegate).saveContext()
                 
                 //Switch back to view mode after press Update button
-                updateHeadingOutlet.text = "View Song"
+//                updateHeadingOutlet.text = "View Reminder"
                 updateActionOutlet.setTitle("Edit", for: UIControl.State.normal)
                 textFieldDeactive()
                 editToggle = false
@@ -176,7 +176,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         print(GlobalVariables.lat)
         print(GlobalVariables.long)
         print(GlobalVariables.titleIdentifier)
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismiss(_:)))
         //Move the UI for the keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)

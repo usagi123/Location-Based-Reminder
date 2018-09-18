@@ -56,7 +56,7 @@ class PlacesViewController: UIViewController {
         // This view controller provides delegate methods and row data for the table view.
         tableView.delegate = self
         tableView.dataSource = self
-        
+        self.title = "Choose a Place"
         tableView.reloadData()
         print("Running")
     }

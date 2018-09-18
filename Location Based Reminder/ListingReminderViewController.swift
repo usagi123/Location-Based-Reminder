@@ -20,6 +20,7 @@ class ListingReminderViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 10
         self.tableView.rowHeight = UITableView.automaticDimension
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         tableView.tableFooterView = UIView()
     }
     
@@ -104,6 +105,19 @@ extension ListingReminderViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
+        if editing {
+            self.navigationItem.rightBarButtonItem = nil
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminder))
+        }
+    }
+    @objc func addReminder() {
+        
+        self.performSegue(withIdentifier: "To Create", sender: nil)
+    }
     //swipe left for delete/open url
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -139,9 +153,9 @@ extension ListingReminderViewController {
     
     //Pass data from table view to View/Edit through segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "UpdateVC" {
-            let updateVC = segue.destination as! EditReminderViewController
+            let nav = segue.destination as! UINavigationController
+            let updateVC = nav.topViewController as! EditReminderViewController
             updateVC.item = filteredData[selectedIndex!]
         }
     }
