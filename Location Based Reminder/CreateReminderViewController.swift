@@ -118,6 +118,9 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillShowNotification, object: nil)
