@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Location Based Reminder-->
+        <!--LoBaRe-->
         <scene sceneID="exc-RR-egu">
             <objects>
                 <tableViewController id="zaf-L7-KNS" customClass="ListingReminderViewController" customModule="Location_Based_Reminder" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="zaf-L7-KNS" id="NB7-0d-o4B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Location Based Reminder" id="IR2-Ud-3WA">
+                    <navigationItem key="navigationItem" title="LoBaRe" id="IR2-Ud-3WA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bC0-s2-BtP">
                             <color key="tintColor" red="0.039215686270000001" green="0.72941176470000002" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

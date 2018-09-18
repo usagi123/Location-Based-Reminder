@@ -19,7 +19,7 @@ class ListingReminderViewController: UITableViewController {
         
         self.tableView.estimatedRowHeight = 10
         self.tableView.rowHeight = UITableView.automaticDimension
-        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         tableView.tableFooterView = UIView()
     }
     
