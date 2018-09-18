@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey("AIzaSyBhgyEAqwxMs2_xP9J5mLABFe2QmI-z70o") //Google place api key
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CLLocationManager().requestAlwaysAuthorization() //Location
         
         //Background fetch
-        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum) //to minimum
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum) //to minimum
         return true
     }
     

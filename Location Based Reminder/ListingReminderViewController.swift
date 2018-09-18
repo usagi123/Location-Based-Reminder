@@ -18,7 +18,7 @@ class ListingReminderViewController: UITableViewController {
         CLLocationManager().requestAlwaysAuthorization() //Location
         
         self.tableView.estimatedRowHeight = 10
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         
         tableView.tableFooterView = UIView()
     }

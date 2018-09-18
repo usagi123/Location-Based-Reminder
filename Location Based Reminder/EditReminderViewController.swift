@@ -53,7 +53,7 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
             
             let actionSheet = UIAlertController(title: "Photo source", message: "Choose a source", preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
-                if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+                if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)) {
                     imagePickerController.sourceType = .camera
                     self.present(imagePickerController, animated: true, completion: nil)
                 } else {
@@ -109,10 +109,10 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
             
             //Assign which attribute belong to which entity so they can load correctly into their field (Read)
             item.title = newTitle
-            item.image = UIImageJPEGRepresentation(newImage, 1)! as Data //Convert Binary data from Core Data to UIImage data for display
+            item.image = newImage.jpegData(compressionQuality: 1)! as Data //Convert Binary data from Core Data to UIImage data for display
             
             updateHeadingOutlet.text = "Update Song"
-            updateActionOutlet.setTitle("Update", for: UIControlState.normal)
+            updateActionOutlet.setTitle("Update", for: UIControl.State.normal)
             textFieldActive()
             editToggle = true
         case true:
@@ -132,13 +132,13 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
                 
                 //Save new data from inside all fields back to Core Data (Update)
                 item.title = newTitle
-                item.image = UIImageJPEGRepresentation(newImage, 1)! as Data
+                item.image = newImage.jpegData(compressionQuality: 1)! as Data
                 
                 (UIApplication.shared.delegate as! AppDelegate).saveContext()
                 
                 //Switch back to view mode after press Update button
                 updateHeadingOutlet.text = "View Song"
-                updateActionOutlet.setTitle("Edit", for: UIControlState.normal)
+                updateActionOutlet.setTitle("Edit", for: UIControl.State.normal)
                 textFieldDeactive()
                 editToggle = false
             }
@@ -146,9 +146,12 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         
-        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -175,23 +178,23 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
         print(GlobalVariables.titleIdentifier)
         
         //Move the UI for the keyboard
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @objc func keyboardWillChange(notification: Notification) {
-        guard let keyboardRect = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
         
-        if notification.name == Notification.Name.UIKeyboardWillShow || notification.name == Notification.Name.UIKeyboardWillChangeFrame {
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
             view.frame.origin.y = -keyboardRect.height
         } else {
             view.frame.origin.y = 0
@@ -230,4 +233,14 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
         }
         return true
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }
