@@ -69,7 +69,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         picker.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func cancel(_ sender: Any) {
+    @objc func cancel(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
     }
@@ -106,6 +106,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         locationEntryTextView?.delegate = self
         itemEntryTextView?.delegate = self
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel(_:)))
         
         detectImageContent()
         detectLabels(image: imageEntryImageView.image)
