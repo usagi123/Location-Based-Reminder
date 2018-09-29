@@ -10,10 +10,7 @@ class CreateReminderViewController: UIViewController, UITextViewDelegate, UIImag
     var imagePickerController: UIImagePickerController!
     lazy var vision = Vision.vision()
     
-    @IBOutlet var locationEntryTextView: UITextView?
     @IBOutlet weak var itemEntryTextView: UITextView!
-    @IBOutlet weak var latitudeEntryTextView: UITextView!
-    @IBOutlet weak var longitudeEntryTextView: UITextView!
     @IBOutlet weak var imageEntryImageView: UIImageView!
     @IBOutlet weak var lblResult: UILabel!
     
@@ -69,10 +66,6 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         picker.dismiss(animated: true, completion: nil)
     }
     
-    @objc func cancel(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
-    }
     @IBAction func saveContact(_ sender: Any) {
         
         //If any fields are empty, app will reject and pop a alert for user to fill it or cancel creating new entry
@@ -97,17 +90,14 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
-            dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "added", sender: nil)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationEntryTextView?.delegate = self
         itemEntryTextView?.delegate = self
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel(_:)))
-        
         detectImageContent()
         detectLabels(image: imageEntryImageView.image)
         //        detectCloudLabels(image: imageEntryImageView.image)

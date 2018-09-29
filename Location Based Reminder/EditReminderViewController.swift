@@ -30,18 +30,11 @@ class EditReminderViewController: UIViewController, UITextViewDelegate, UIImageP
         }
     }
     
-    @IBOutlet weak var locationText: UITextView!
     @IBOutlet weak var titleText: UITextView!
-    @IBOutlet weak var latitudeText: UITextView!
-    @IBOutlet weak var longitudeText: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func checkMapButton(_ sender: Any) {
         performSegue(withIdentifier: "checkMap", sender: self)
-    }
-    
-    @objc func dismiss(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func chooseImageByTapping(_ sender: UITapGestureRecognizer) {
@@ -176,7 +169,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         print(GlobalVariables.lat)
         print(GlobalVariables.long)
         print(GlobalVariables.titleIdentifier)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismiss(_:)))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismiss(_:)))
         //Move the UI for the keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)

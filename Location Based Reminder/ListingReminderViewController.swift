@@ -20,7 +20,9 @@ class ListingReminderViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 10
         self.tableView.rowHeight = UITableView.automaticDimension
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminder))
         tableView.tableFooterView = UIView()
     }
     
@@ -154,9 +156,8 @@ extension ListingReminderViewController {
     //Pass data from table view to View/Edit through segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UpdateVC" {
-            let nav = segue.destination as! UINavigationController
-            let updateVC = nav.topViewController as! EditReminderViewController
-            updateVC.item = filteredData[selectedIndex!]
+            let detailView: EditReminderViewController = segue.destination as! EditReminderViewController
+            detailView.item = filteredData[selectedIndex!]
         }
     }
 }
